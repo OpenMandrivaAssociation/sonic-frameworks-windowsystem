@@ -1,8 +1,8 @@
 %define major %(echo %{version} |cut -d. -f1-2)
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define libname %mklibname SonicDEWindowSystem
-%define devname %mklibname SonicDEWindowSystem -d
+%define libname %mklibname SonicFrameworksWindowSystem
+%define devname %mklibname SonicFrameworksWindowSystem -d
 #define git 20240217
 
 Name: sonic-frameworks-windowsystem
@@ -48,7 +48,7 @@ BuildRequires: pkgconfig(xcb-icccm)
 BuildRequires: pkgconfig(xcb-xfixes)
 BuildRequires: pkgconfig(xfixes)
 Requires: %{libname} = %{EVRD}
-Requires: %{name}-backend = %{EVRD}
+# Requires: %{name}-backend = %{EVRD}
 # Requires: (%{name}-backend-wayland = %{EVRD} if plasma6-kwin-wayland)
 # Requires: (%{name}-backend-x11 = %{EVRD} if x11-server-xorg)
 Requires: sonic-win
