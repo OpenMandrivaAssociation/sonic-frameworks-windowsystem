@@ -6,13 +6,13 @@
 #define git 20240217
 
 Name: sonic-frameworks-windowsystem
-Version: 6.24.0.1
+Version: 6.25.0
 Release: %{?git:0.%{git}.}1
 URL:     https://github.com/Sonic-DE/sonic-frameworks-windowsystem
 # %if 0%{?git:1}
 # Source0: https://invent.kde.org/frameworks/kwindowsystem/-/archive/master/kwindowsystem-master.tar.bz2#/kwindowsystem-%{git}.tar.bz2
 # %else
-Source0:  %url/archive/refs/tags/%version.tar.gz#/%name-%version.tar.gz
+Source0:  %url/archive/%version/%name-%version.tar.gz
 # %endif
 Summary: Access to the windowing system
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
@@ -34,11 +34,6 @@ BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6GuiTools)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(Qt6DBusTools)
-# BuildRequires: cmake(Qt6WaylandClient)
-# BuildRequires: cmake(WaylandProtocols)
-# BuildRequires: cmake(PlasmaWaylandProtocols)
-# BuildRequires: pkgconfig(wayland-client)
-# BuildRequires: pkgconfig(wayland-protocols)
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
@@ -48,9 +43,6 @@ BuildRequires: pkgconfig(xcb-icccm)
 BuildRequires: pkgconfig(xcb-xfixes)
 BuildRequires: pkgconfig(xfixes)
 Requires: %{libname} = %{EVRD}
-# Requires: %{name}-backend = %{EVRD}
-# Requires: (%{name}-backend-wayland = %{EVRD} if plasma6-kwin-wayland)
-# Requires: (%{name}-backend-x11 = %{EVRD} if x11-server-xorg)
 Requires: sonic-win
 Conflicts: kf6-kwindowsystem
 
