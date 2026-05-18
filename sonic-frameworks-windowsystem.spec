@@ -71,6 +71,8 @@ Access to the windowing system
 
 %install -a
 %find_lang %{name} --all-name --with-qt --with-html
+rm -rf %{buildroot}/%{_libdir}/cmake
+rm -rf %{buildroot}/%{_libdir}/pkgconfig
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kwindowsystem.*
@@ -81,8 +83,10 @@ Access to the windowing system
 
 %files -n %{devname}
 %{_includedir}/KF6/KWindowSystem
-%{_libdir}/cmake/KF6WindowSystem
-%{_libdir}/pkgconfig/KF6WindowSystem.pc
+
+# pending rename
+# %{_libdir}/cmake/KF6WindowSystem
+# %{_libdir}/pkgconfig/KF6WindowSystem.pc
 
 %files -n %{libname}
 %{_libdir}/libKF6WindowSystem.so*
