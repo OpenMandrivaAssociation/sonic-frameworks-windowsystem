@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: sonic-frameworks-windowsystem
-Version: 6.26.0
+Version: 6.28.0.1
 Release: %{?git:0.%{git}.}1
 URL:     https://github.com/Sonic-DE/sonic-frameworks-windowsystem
 # %if 0%{?git:1}
