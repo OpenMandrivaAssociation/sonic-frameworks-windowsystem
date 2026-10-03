@@ -6,8 +6,8 @@
 #define git 20240217
 
 Name: sonic-frameworks-windowsystem
-Version: 6.28.0.1
-Release: %{?git:0.%{git}.}3
+Version: 6.30.0
+Release: %{?git:0.%{git}.}1
 URL:     https://github.com/Sonic-DE/sonic-frameworks-windowsystem
 # %if 0%{?git:1}
 # Source0: https://invent.kde.org/frameworks/kwindowsystem/-/archive/master/kwindowsystem-master.tar.bz2#/kwindowsystem-%{git}.tar.bz2
