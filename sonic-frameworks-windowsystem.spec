@@ -7,7 +7,7 @@
 
 Name: sonic-frameworks-windowsystem
 Version: 6.28.0.1
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 URL:     https://github.com/Sonic-DE/sonic-frameworks-windowsystem
 # %if 0%{?git:1}
 # Source0: https://invent.kde.org/frameworks/kwindowsystem/-/archive/master/kwindowsystem-master.tar.bz2#/kwindowsystem-%{git}.tar.bz2
@@ -71,8 +71,6 @@ Access to the windowing system
 
 %install -a
 %find_lang %{name} --all-name --with-qt --with-html
-rm -rf %{buildroot}/%{_libdir}/cmake
-rm -rf %{buildroot}/%{_libdir}/pkgconfig
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kwindowsystem.*
@@ -83,10 +81,8 @@ rm -rf %{buildroot}/%{_libdir}/pkgconfig
 
 %files -n %{devname}
 %{_includedir}/KF6/KWindowSystem
-
-# pending rename
-# %{_libdir}/cmake/KF6WindowSystem
-# %{_libdir}/pkgconfig/KF6WindowSystem.pc
+%{_libdir}/cmake/KF6WindowSystem
+%{_libdir}/pkgconfig/KF6WindowSystem.pc
 
 %files -n %{libname}
 %{_libdir}/libKF6WindowSystem.so*
